@@ -25,13 +25,28 @@
 
 
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export const Profile = () => {
+   const UserName =  useSelector((state) => state.name,)
+   const stateee = useSelector((state) => state)
+   console.log(stateee,'state objecttttttt')
+
+   const logoutAction = useDispatch();
+
+   const logoutUser = () => {
+        logoutAction({
+            type: 'logout'
+        })
+   }
 
     return (
     <>
         <h2>Profile</h2>
+        <h3>App Name : {stateee.AppName}</h3>
+        <h3>Name: {UserName} </h3>
+        <button onClick={logoutUser} >Logout</button>
     </>
     
     )

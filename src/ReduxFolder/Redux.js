@@ -31,14 +31,26 @@ export const UpdateLoginState = () => {
 // createing the initial state of the redux store 
 
 const iniVal = {
+    AppName: "Newton App",
     isLoggedIn : false,
+    name: 'default'
 }
 
 // creatint the reducer function of the redux store 
 const appReducer = (initialValue = iniVal, action) => {
     if(action.type === "update-login-state"){
         return {
-            isLoggedIn: true
+            isLoggedIn: true,
+            name: action.payload,
+            AppName: "Newton App"
+        }
+    }
+
+    if(action.type === "logout"){
+        return{
+            ...initialValue,
+            isLoggedIn: false,
+            name: 'default'
         }
     }
     return initialValue;

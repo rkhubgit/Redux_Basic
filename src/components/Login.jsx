@@ -37,7 +37,8 @@ export const Login = () => {
     const LoginUser = (e) => {
         e.preventDefault();
         dispatchAction({
-            type: 'update-login-state'
+            type: 'update-login-state',
+            payload: nameRef.current.value
         })
     }
 
