@@ -27,26 +27,29 @@
 // }
 
 
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux';
+import { login } from '../ReduxFolder/auth/authAction';
+
 
 export const Login = () => {
+
     const nameRef = useRef();
-    const dispatchAction = useDispatch()
+    const loginDispatch = useDispatch()
 
     const LoginUser = (e) => {
         e.preventDefault();
-        dispatchAction({
-            type: 'update-login-state',
-            payload: nameRef.current.value
-        })
+        loginDispatch(login(nameRef.current.value))
+
     }
 
     return(
+
         <>
-            <h2>home</h2>
-            <input type='text' placeholder='enter name' name='name' ref={nameRef} />
-            <button onClick={LoginUser} >Login</button>
+        <h2>Login Comp</h2>
+        <input type='text' placeholder='enter name here' name='name' ref={nameRef}  />
+        <button onClick={LoginUser} >Login</button>
+        
         </>
     )
 }

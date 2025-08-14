@@ -8,8 +8,8 @@
 
 // reducer function
 export const authReducer = (initialValue, myAction) => {
-    console.log('from reducer');
-    console.log(initialValue);
+    // console.log('from reducer');
+    // console.log(initialValue);
     if (myAction.type === "login") {
       return { 
               ...initialValue,

@@ -1,53 +1,24 @@
-// import React from 'react'
-// import { useDispatch, useSelector } from 'react-redux';
-// import { logout } from '../ReduxFolder/auth/authAction';
-
-// export const Profile = () => {
-//   const dispatch = useDispatch();
-//   const userName = useSelector((state) => state.name);
-  
-//   console.log('rendering Profile');
-//   const logoutUser = () => {
-//     dispatch(logout());
-
-//     // dispatch({
-//     //   type: 'logout'
-//     // })
-//   }
-//   return (
-//     <>
-//         <h3>MY Profile</h3>
-//         <div>Name: {userName}</div>
-//         <button onClick={logoutUser}>logout</button>
-//     </>
-//   )
-// }
 
 
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../ReduxFolder/auth/authAction'
 
 export const Profile = () => {
-   const UserName =  useSelector((state) => state.name,)
-   const stateee = useSelector((state) => state)
-   console.log(stateee,'state objecttttttt')
-
-   const logoutAction = useDispatch();
+   const UserName =  useSelector((state) => state.name)
+   const logoutDispatch = useDispatch();
 
    const logoutUser = () => {
-        logoutAction({
-            type: 'logout'
-        })
+        logoutDispatch(logout())
    }
 
-    return (
-    <>
-        <h2>Profile</h2>
-        <h3>App Name : {stateee.AppName}</h3>
-        <h3>Name: {UserName} </h3>
-        <button onClick={logoutUser} >Logout</button>
-    </>
-    
+    return(
+
+        <>
+            <h2>Profie Comp</h2>
+            <h3>Name: {UserName} </h3>
+            <button onClick={logoutUser} >Logout</button>
+        
+        </>
     )
 }
