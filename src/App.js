@@ -31,7 +31,7 @@ const App = () => {
           <header className="App-header">
             <h1>Redux</h1>
           </header>
-          {/* <Home /> */}
+          <Home />
           <PostTitle/>
           <PostBody/>
         </div>
