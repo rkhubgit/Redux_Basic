@@ -20,6 +20,8 @@ import { Home } from "./components/Home";
 
 import React from "react";
 import { myStore } from "./ReduxFolder/Redux";
+import { PostTitle } from "./components/PostTitle";
+import { PostBody } from "./components/PostBody";
 
 const App = () => {
   return (
@@ -29,7 +31,9 @@ const App = () => {
           <header className="App-header">
             <h1>Redux</h1>
           </header>
-          <Home />
+          {/* <Home /> */}
+          <PostTitle/>
+          <PostBody/>
         </div>
       </Provider>
     </>

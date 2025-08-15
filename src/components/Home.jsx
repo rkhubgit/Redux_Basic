@@ -26,12 +26,14 @@ import { AppName } from './AppName'
 import { Profile } from './Profile'
 import { Login } from './Login'
 import { useSelector } from 'react-redux'
+import  CountClass  from './CountClass'
+import { Shop } from './Shop'
 
 
 export const Home = () => {
 
   const loginState = useSelector((state) => {
-    return state.isLoggedIn
+    return state.auth.isLoggedIn 
   })
  
   return(
@@ -40,7 +42,8 @@ export const Home = () => {
       <AppName/>
       {loginState ? <Profile/> :  <Login/>}
       
-
+      {/* <CountClass/> */}
+      <Shop/>
     </>
   )
 }

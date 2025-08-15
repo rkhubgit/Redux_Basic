@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../ReduxFolder/auth/authAction'
 
 export const Profile = () => {
-   const UserName =  useSelector((state) => state.name)
+   const UserName =  useSelector((state) => state.auth.name)
    const logoutDispatch = useDispatch();
 
    const logoutUser = () => {
